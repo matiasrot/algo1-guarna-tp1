@@ -1,0 +1,45 @@
+#Tengo que tener una constante para que las funciones corten cuando se alcanza ese valor
+MAX = " "
+#--------------------------- Funciones ------------------------------#
+def leer(archivo_python):
+    #Pre: recibe un archivo
+    #Post: devuelve lista con tre valores: nombre de la funcion,
+    # autor y ayuda, lineas de codigo.
+    linea = archivo_python.readline()
+    return linea.rstrip("\n").split(",") if linea else "","","0","0"
+#-----------------------------------------------------------------------#
+def imprimir(leyenda,dato, separador = False):
+    #Pre: leyenda y dato valido, booleana False por defecto
+    #Post: imprime la leyenda con el dato que se pase
+    # si la booleana es True imprime una separacion con espacio
+    print(leyenda, dato)
+    if (separador):
+        guion = "=" * 55
+        print(guion, "\n")
+#-----------------------------------------------------------------------#
+def total(registro, archivo):
+    autor = registro[1]
+
+pass
+
+#-----------------------------------------------------------------------#
+def corte_control(archivo_python):
+    #Pre: recibe un archivo abierto
+    #Post: realiza el corte de control por pantalla
+    registro = leer(archivo_python)
+    autor = registro[1]
+    suma_total = 0
+    while (autor =! MAX):
+        imprimir("Autor: ", autor)
+        acumulado, registro = total(registro, archivo)
+        imprimir("Total: ",acumulado, True)
+        suma_total += acumulado
+    imprimir("\n ===== Acumulado total =", suma_total)
+    
+#-------------------------- Main -------------------------#
+def main():
+    archivo_python = open("c:app_matematica.py")
+    corte_contronl(archivo_python)
+    archivo_python.close()
+    
+main()
